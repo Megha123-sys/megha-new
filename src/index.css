@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent;
+  }
+  
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-4xl mx-auto;
+  }
+
+  .nav-link {
+    @apply text-slate-300 hover:text-green-400 transition-colors duration-200 font-mono text-sm;
+  }
+
+  .nav-link.active {
+    @apply text-green-400;
+  }
+
+  .section-title {
+    @apply text-2xl sm:text-3xl font-bold text-slate-100 mb-8;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-slate-400 mb-12;
+  }
+
+  .btn-primary {
+    @apply bg-slate-800 hover:bg-slate-700 text-slate-100 px-6 py-3 rounded-lg transition-colors duration-200 font-mono text-sm;
+  }
+
+  .btn-secondary {
+    @apply border border-slate-600 hover:border-green-400 text-slate-300 hover:text-green-400 px-6 py-3 rounded-lg transition-colors duration-200 font-mono text-sm;
+  }
+
+  .card {
+    @apply bg-slate-900 border border-slate-800 rounded-lg p-6 hover:border-slate-700 transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
